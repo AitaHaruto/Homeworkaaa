@@ -193,6 +193,7 @@ namespace WindowsFormsApp1
                 textBox1.Text = $"{num1 / num2}";
             }
             textBox2.Text = null;
+            enzanshi = null;
         }
 
         private void button15_Click(object sender, EventArgs e)
