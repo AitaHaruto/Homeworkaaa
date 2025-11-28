@@ -174,8 +174,25 @@ namespace WindowsFormsApp1
 
             num2 = Convert.ToDouble(textBox1.Text);
             //ここに演算処理を書いてください.
+            if (enzanshi == "+")
+            {
+                textBox1.Text = $"{num1 + num2}";
 
+            }
+           else if (enzanshi == "-")
+            {
+                textBox1.Text = $"{num1 - num2}";
 
+            }
+            else if(enzanshi == "*")
+            {
+                textBox1.Text = $"{num1 * num2}";
+            }
+            else if (enzanshi == "/")
+            {
+                textBox1.Text = $"{num1 / num2}";
+            }
+            textBox2.Text = null;
         }
 
         private void button15_Click(object sender, EventArgs e)
