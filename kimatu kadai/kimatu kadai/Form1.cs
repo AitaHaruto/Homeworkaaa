@@ -106,7 +106,7 @@ namespace WindowsFormsApp1
             {
                 if (textBox1.Text != null)
                 {
-
+                     
                     num1 = Convert.ToDouble(textBox1.Text);
                     textBox2.Text = textBox1.Text + "-";
                     textBox1.Text = null;
@@ -199,12 +199,16 @@ namespace WindowsFormsApp1
         private void button15_Click(object sender, EventArgs e)
         {
             Shisokuenzan();
+            
 
 
         }
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-
+             if(textBox1.Text=="4545")
+             {
+             MessageBox.Show("君、すべってるよ。")
+             }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
