@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace kimatu_kadai
 {
@@ -19,4 +20,6 @@ namespace kimatu_kadai
             Application.Run(new Form1());
         }
     }
+
+   
 }
