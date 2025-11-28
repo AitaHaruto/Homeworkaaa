@@ -207,7 +207,8 @@ namespace WindowsFormsApp1
         {
              if(textBox1.Text=="4545")
              {
-             MessageBox.Show("君、すべってるよ。")
+                MessageBox.Show("君、すべってるよ。");
+                textBox1.Text=null;
              }
         }
 
