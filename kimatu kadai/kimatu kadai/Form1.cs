@@ -130,7 +130,7 @@ namespace WindowsFormsApp1
                 }
             }
 
-
+           
 
         }
 
@@ -199,25 +199,26 @@ namespace WindowsFormsApp1
         private void button15_Click(object sender, EventArgs e)
         {
             Shisokuenzan();
-            
-
-
         }
-        private void TextBox1_TextChanged(object sender, EventArgs e)
+        private void Subetteru()
         {
-             if(textBox1.Text=="4545")
+            if(textBox1.Text=="4545"||textBox1.Text=="1919")
              {
                 MessageBox.Show("君、すべってるよ。");
                 textBox1.Text=null;
-             }
+                Application.Exit();
+             } 
+        }
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            Subetteru();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
-
+        
         }
-
+        
 
     }
 }
