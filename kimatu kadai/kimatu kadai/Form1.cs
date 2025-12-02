@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         private string enzanshi;
         private double num1;
         private double num2;
+         
 
 
         public Form1()
@@ -27,7 +28,7 @@ namespace WindowsFormsApp1
 
         private void NumberButton_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
+           Button btn = (Button)sender;
             textBox1.Text += btn.Text;
         }
       
@@ -37,74 +38,20 @@ namespace WindowsFormsApp1
             textBox1.Text = "";
             textBox2.Text = "";
         }
-
-        private void Plus(object sender, EventArgs e)
-        {   //数値より先に演算子を押されたときに発生するバグを阻止.
-            if (textBox1.Text != string.Empty)
+        private void Operator(object sender,EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if(textBox1.Text!="")
             {
-                if (textBox1.Text != "")
-                {
-
-                    num1 = Convert.ToDouble(textBox1.Text);
-                    textBox2.Text = textBox1.Text + "+";
+                    num1=Convert.ToDouble(textBox1.Text);
+                    textBox2.Text = textBox1.Text + btn.Text;
                     textBox1.Text = "";
-                    enzanshi = "+";
+                    enzanshi = btn.Text;
 
-                }
             }
-
         }
 
-        private void Minus(object sender, EventArgs e)
-        {   //数値より先に演算子を押されたときに発生するバグを阻止.
-            if (textBox1.Text != string.Empty)
-            {
-                if (textBox1.Text != "")
-                {
-                     
-                    num1 = Convert.ToDouble(textBox1.Text);
-                    textBox2.Text = textBox1.Text + "-";
-                    textBox1.Text = "";
-                    enzanshi = "-";
-                }
-            }
-
-
-        }
-
-        private void Kakeru(object sender, EventArgs e)
-        {   //数値より先に演算子を押されたときに発生するバグを阻止.
-            if (textBox1.Text != string.Empty)
-            {
-                if (textBox1.Text != "")
-                {
-                    num1 = Convert.ToDouble(textBox1.Text);
-                    textBox2.Text = textBox1.Text + "×";
-                    textBox1.Text = "";
-                    enzanshi = "*";
-                }
-            }
-
-           
-
-        }
-
-        private void Waru(object sender, EventArgs e)
-        {  //数値より先に演算子を押されたときに発生するバグを阻止.
-            if (textBox1.Text != string.Empty)
-            {
-                if (textBox1.Text != "")
-                {
-                    num1 = Convert.ToDouble(textBox1.Text);
-                    textBox2.Text = textBox1.Text + "÷";
-                    textBox1.Text = "";
-                    enzanshi = "/";
-                }
-            }
-
-
-
-        }
+       
         private void dott_Click(object sender, EventArgs e)
         {  //小数点を複数押せないようにする.
            
@@ -136,7 +83,7 @@ namespace WindowsFormsApp1
 
             if (textBox1.Text != "")
             {
-                            num2 = Convert.ToDouble(textBox1.Text);
+              num2 = Convert.ToDouble(textBox1.Text);
             //ここに演算処理を書いてください.
             if (enzanshi == "+")
             {
@@ -148,7 +95,7 @@ namespace WindowsFormsApp1
                 textBox1.Text = $"{num1 - num2}";
 
             }
-            else if(enzanshi == "*")
+            else if(enzanshi == "×")
             {
                 textBox1.Text = $"{num1 * num2}";
             }
