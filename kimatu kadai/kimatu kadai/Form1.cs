@@ -111,6 +111,11 @@ namespace WindowsFormsApp1
             {
                 textBox1.Text = textBox1.Text + ".";
             }
+            else if(textBox1.Text=="")
+            {
+              textBox1.Text="0.";  
+
+            } 
 
         }
 
@@ -169,14 +174,14 @@ namespace WindowsFormsApp1
         }
         private void TextBox1_TextChanged(object sender, EventArgs e)
         { 
-            textBox1.ReadOnly=true;
+            
             Subetteru();
             
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            textBox2.ReadOnly=true;
+            
         }
         
        
