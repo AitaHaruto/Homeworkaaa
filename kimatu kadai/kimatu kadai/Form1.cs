@@ -45,7 +45,8 @@ namespace WindowsFormsApp1
 
             if (textBox1.Text != "")
             {
-                if (textBox2.Text != "")
+                if(textBox2.Text.EndsWith("+")||textBox2.Text.EndsWith("-")
+             ||textBox2.Text.EndsWith("×")||textBox2.Text.EndsWith("÷"))
                 {
                     // 連続計算
                     num2 = Convert.ToDouble(textBox1.Text);
