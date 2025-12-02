@@ -21,20 +21,26 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-        }
+        }  
         private void Form1_Load(object sender, EventArgs e)
-        {
-            int index = 1;  // Tag に入れる数字のカウンタ
+       {
+         int index = 0;
 
-            foreach (Control ctrl in this.Controls)
+    foreach (Control ctrl in this.Controls)
+    {
+        if (ctrl is Button btn)
+        {
+            // Text が数字なら Tag を設定
+            if (int.TryParse(btn.Text, out _))
             {
-                if (ctrl is Button btn)
-                {
-                    btn.Tag = index;  // ← 数値なら問題なく設定できる
-                    index++;
-                }
+                btn.Tag = index;
+                index++;
+                btn.Click += NumberButton_Click;
             }
         }
+    }
+       }
+
         private void NumberButton_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
