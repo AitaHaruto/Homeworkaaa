@@ -173,28 +173,27 @@
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox1.Location = new System.Drawing.Point(30, 117);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(318, 74);
             this.textBox1.TabIndex = 13;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
-            this.textBox1.ReadOnly=true;
             this.textBox1.TabStop = false;
-            this.textBox1.Enabled = false;
-
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("MS UI Gothic", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox2.Location = new System.Drawing.Point(30, 62);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(318, 49);
             this.textBox2.TabIndex = 14;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.textBox2.ReadOnly=true;
             this.textBox2.TabStop = false;
-            this.textBox1.Enabled = false;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.Enabled = false;
             // 
             // button14
             // 
@@ -288,7 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 640);
+            this.ClientSize = new System.Drawing.Size(363, 606);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.dott);
             this.Controls.Add(this.Clear);
