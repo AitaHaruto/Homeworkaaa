@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        private bool state = true;
+       
         private string enzanshi;
         private double num1;
         private double num2;
@@ -79,15 +79,15 @@ namespace WindowsFormsApp1
 
         private void Clear_Click(object sender, EventArgs e)
         {
-            textBox1.Text = null;
-            textBox2.Text = null;
+            textBox1.Text = "";
+            textBox2.Text = "";
         }
 
         private void Plus(object sender, EventArgs e)
         {   //数値より先に演算子を押されたときに発生するバグを阻止.
             if (textBox1.Text != string.Empty)
             {
-                if (textBox1.Text != null)
+                if (textBox1.Text != "")
                 {
 
                     num1 = Convert.ToDouble(textBox1.Text);
@@ -104,7 +104,7 @@ namespace WindowsFormsApp1
         {   //数値より先に演算子を押されたときに発生するバグを阻止.
             if (textBox1.Text != string.Empty)
             {
-                if (textBox1.Text != null)
+                if (textBox1.Text != "")
                 {
                      
                     num1 = Convert.ToDouble(textBox1.Text);
@@ -121,7 +121,7 @@ namespace WindowsFormsApp1
         {   //数値より先に演算子を押されたときに発生するバグを阻止.
             if (textBox1.Text != string.Empty)
             {
-                if (textBox1.Text != null)
+                if (textBox1.Text != "")
                 {
                     num1 = Convert.ToDouble(textBox1.Text);
                     textBox2.Text = textBox1.Text + "×";
@@ -138,7 +138,7 @@ namespace WindowsFormsApp1
         {  //数値より先に演算子を押されたときに発生するバグを阻止.
             if (textBox1.Text != string.Empty)
             {
-                if (textBox1.Text != null)
+                if (textBox1.Text != "")
                 {
                     num1 = Convert.ToDouble(textBox1.Text);
                     textBox2.Text = textBox1.Text + "÷";
@@ -192,7 +192,7 @@ namespace WindowsFormsApp1
             {
                 textBox1.Text = $"{num1 / num2}";
             }
-            textBox2.Text = null;
+            textBox2.Text = "";
             enzanshi = null;
         }
 
@@ -205,7 +205,7 @@ namespace WindowsFormsApp1
             if(textBox1.Text=="4545"||textBox1.Text=="1919")
              {
                 MessageBox.Show("君、すべってるよ。");
-                textBox1.Text=null;
+                textBox1.Text="";
                 Application.Exit();
              } 
         }
