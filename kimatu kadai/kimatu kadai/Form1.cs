@@ -92,7 +92,7 @@ namespace WindowsFormsApp1
 
                     num1 = Convert.ToDouble(textBox1.Text);
                     textBox2.Text = textBox1.Text + "+";
-                    textBox1.Text = null;
+                    textBox1.Text = "";
                     enzanshi = "+";
 
                 }
@@ -109,7 +109,7 @@ namespace WindowsFormsApp1
                      
                     num1 = Convert.ToDouble(textBox1.Text);
                     textBox2.Text = textBox1.Text + "-";
-                    textBox1.Text = null;
+                    textBox1.Text = "";
                     enzanshi = "-";
                 }
             }
@@ -125,7 +125,7 @@ namespace WindowsFormsApp1
                 {
                     num1 = Convert.ToDouble(textBox1.Text);
                     textBox2.Text = textBox1.Text + "×";
-                    textBox1.Text = null;
+                    textBox1.Text = "";
                     enzanshi = "*";
                 }
             }
@@ -142,7 +142,7 @@ namespace WindowsFormsApp1
                 {
                     num1 = Convert.ToDouble(textBox1.Text);
                     textBox2.Text = textBox1.Text + "÷";
-                    textBox1.Text = null;
+                    textBox1.Text = "";
                     enzanshi = "/";
                 }
             }
@@ -171,8 +171,9 @@ namespace WindowsFormsApp1
         private void Shisokuenzan()
         {
 
-
-            num2 = Convert.ToDouble(textBox1.Text);
+            if (textBox1.Text != "")
+            {
+                            num2 = Convert.ToDouble(textBox1.Text);
             //ここに演算処理を書いてください.
             if (enzanshi == "+")
             {
@@ -194,6 +195,8 @@ namespace WindowsFormsApp1
             }
             textBox2.Text = "";
             enzanshi = null;
+            }
+
         }
 
         private void button15_Click(object sender, EventArgs e)
