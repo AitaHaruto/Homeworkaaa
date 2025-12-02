@@ -27,30 +27,35 @@ namespace WindowsFormsApp1
 
         private void RenzokuKeisan()
         {
-             textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
-                     num1 = Convert.ToDouble(textBox1.Text);
-                     num2=  Convert.ToDouble(textBox2.Text);
-                      
-                switch (enzanshi)
-                {
-                    case "+": textBox2.Text = Convert.ToString(num1 + num2); break;
-                    case "-": textBox2.Text = Convert.ToString(num1 - num2); break;
-                    case "×": textBox2.Text = Convert.ToString(num1 * num2); break;
-                    case "÷":
-                        if (num2 == 0)
-                        {
-                            textBox1.Text = "Error";
-                        }
-                        else
-                        {
-                            textBox2.Text = Convert.ToString(num1 / num2);
-                        }
-                        break;
-
-                }
-                textBox1.Text = "";
-                enzanshi = null;
+            if(textBox2.Text.EndsWith("+")||textBox2.Text.EndsWith("-")
+             ||textBox2.Text.EndsWith("×")||textBox2.Text.EndsWith("÷"))
+            {
+                textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
+            }
             
+            num1 = Convert.ToDouble(textBox1.Text);
+            num2 = Convert.ToDouble(textBox2.Text);
+
+            switch (enzanshi)
+            {
+                case "+": textBox2.Text = Convert.ToString(num2 + num1); break;
+                case "-": textBox2.Text = Convert.ToString(num2 - num1); break;
+                case "×": textBox2.Text = Convert.ToString(num2 * num1); break;
+                case "÷":
+                    if (num1 == 0)
+                    {
+                        textBox1.Text = "Error";
+                    }
+                    else
+                    {
+                        textBox2.Text = Convert.ToString(num2 / num1);
+                    }
+                    break;
+
+            }
+            textBox1.Text = "";
+            enzanshi = null;
+
         }
 
 
@@ -72,20 +77,20 @@ namespace WindowsFormsApp1
             Button btn = (Button)sender;
             if (textBox1.Text != "")
             {
-                if(textBox2.Text!="")
+                if (textBox2.Text != "")
                 {
                     RenzokuKeisan();
                 }
                 else
                 {
-                     num1 = Convert.ToDouble(textBox1.Text);
-                textBox2.Text = textBox1.Text + btn.Text;
-                textBox1.Text = "";
-                enzanshi = btn.Text;
+                    num1 = Convert.ToDouble(textBox1.Text);
+                    textBox2.Text = textBox1.Text + btn.Text;
+                    textBox1.Text = "";
+                    enzanshi = btn.Text;
 
                 }
 
-               
+
             }
         }
 
