@@ -22,29 +22,13 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }  
-        private void Form1_Load(object sender, EventArgs e)
-       {
-         int index = 0;
-
-    foreach (Control ctrl in this.Controls)
-    {
-        if (ctrl is Button btn)
-        {
-            // Text が数字なら Tag を設定
-            if (int.TryParse(btn.Text, out _))
-            {
-                btn.Tag = index;
-                index++;
-                btn.Click += NumberButton_Click;
-            }
-        }
-    }
-       }
+    
+       
 
         private void NumberButton_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            textBox1.Text += btn.Tag.ToString();
+            textBox1.Text += btn.Text;
         }
       
 
