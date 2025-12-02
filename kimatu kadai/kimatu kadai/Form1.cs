@@ -25,40 +25,6 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void RenzokuKeisan()
-        {
-            if(textBox2.Text.EndsWith("+")||textBox2.Text.EndsWith("-")
-             ||textBox2.Text.EndsWith("×")||textBox2.Text.EndsWith("÷"))
-            {
-                textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
-            }
-            
-            num1 = Convert.ToDouble(textBox1.Text);
-            num2 = Convert.ToDouble(textBox2.Text);
-
-            switch (enzanshi)
-            {
-                case "+": textBox2.Text = Convert.ToString(num2 + num1); break;
-                case "-": textBox2.Text = Convert.ToString(num2 - num1); break;
-                case "×": textBox2.Text = Convert.ToString(num2 * num1); break;
-                case "÷":
-                    if (num1 == 0)
-                    {
-                        textBox1.Text = "Error";
-                    }
-                    else
-                    {
-                        textBox2.Text = Convert.ToString(num2 / num1);
-                    }
-                    break;
-
-            }
-            textBox1.Text = "";
-            enzanshi = null;
-
-        }
-
-
 
         private void NumberButton_Click(object sender, EventArgs e)
         {
@@ -75,24 +41,41 @@ namespace WindowsFormsApp1
         private void Operator(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+
+
             if (textBox1.Text != "")
             {
                 if (textBox2.Text != "")
                 {
-                    RenzokuKeisan();
+                    // 連続計算
+                    num2 = Convert.ToDouble(textBox1.Text);
+                    switch (enzanshi)
+                    {
+                        case "+": num1 = num1 + num2; break;
+                        case "-": num1 = num1 - num2; break;
+                        case "×": num1 = num1 * num2; break;
+                        case "÷":
+                            if (num2 == 0)
+                            {
+                                textBox1.Text = "Error";
+                                return;
+                            }
+                            num1 = num1 / num2;
+                            break;
+                    }
                 }
                 else
                 {
+                    // 1回目の演算
                     num1 = Convert.ToDouble(textBox1.Text);
-                    textBox2.Text = textBox1.Text + btn.Text;
-                    textBox1.Text = "";
-                    enzanshi = btn.Text;
-
                 }
 
-
+                enzanshi = btn.Text;
+                textBox2.Text = num1.ToString() + btn.Text;
+                textBox1.Text = "";
             }
         }
+
 
 
         private void dott_Click(object sender, EventArgs e)
