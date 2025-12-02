@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Windows Forms Debug",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "kimatu kadai/kimatu kadai/bin/Debug/kimatu kadai.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        }
+    ]
+}
