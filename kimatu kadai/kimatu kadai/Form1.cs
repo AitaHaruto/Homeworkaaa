@@ -84,25 +84,23 @@ namespace WindowsFormsApp1
             if (textBox1.Text != "")
             {
               num2 = Convert.ToDouble(textBox1.Text);
-            //ここに演算処理を書いてください.
-            if (enzanshi == "+")
-            {
-                textBox1.Text = $"{num1 + num2}";
-
-            }
-           else if (enzanshi == "-")
-            {
-                textBox1.Text = $"{num1 - num2}";
-
-            }
-            else if(enzanshi == "×")
-            {
-                textBox1.Text = $"{num1 * num2}";
-            }
-            else if (enzanshi == "/")
-            {
-                textBox1.Text = $"{num1 / num2}";
-            }
+            switch(enzanshi)
+                {
+                    case "+":textBox1.Text=Convert.ToString(num1+num2);break;
+                    case "-":textBox1.Text=Convert.ToString(num1-num2);break;
+                    case "×":textBox1.Text=Convert.ToString(num1*num2);break;
+                    case "÷":
+                    if(num2==0)
+                        {
+                            textBox1.Text="Error";
+                        }
+                        else
+                        {
+                             textBox1.Text=Convert.ToString(num1/num2);
+                        }
+                        break;
+                   
+                }
             textBox2.Text = "";
             enzanshi = null;
             }
