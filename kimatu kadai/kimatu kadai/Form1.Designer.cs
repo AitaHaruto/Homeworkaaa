@@ -185,6 +185,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("MS UI Gothic", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox2.Location = new System.Drawing.Point(30, 62);
             this.textBox2.Name = "textBox2";
@@ -193,7 +194,7 @@
             this.textBox2.TabIndex = 14;
             this.textBox2.TabStop = false;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.textBox2.Enabled = false;
+        
             // 
             // button14
             // 
