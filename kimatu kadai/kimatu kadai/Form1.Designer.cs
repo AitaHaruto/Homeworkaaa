@@ -179,6 +179,7 @@
             this.textBox1.Size = new System.Drawing.Size(318, 74);
             this.textBox1.TabIndex = 13;
             this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.textBox1.ReadOnly=true;
             // 
             // textBox2
             // 
@@ -188,6 +189,7 @@
             this.textBox2.Size = new System.Drawing.Size(318, 49);
             this.textBox2.TabIndex = 14;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.ReadOnly=true;
             // 
             // button14
             // 
