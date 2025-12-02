@@ -107,16 +107,19 @@ namespace WindowsFormsApp1
         }
         private void dott_Click(object sender, EventArgs e)
         {  //小数点を複数押せないようにする.
+           
             if (!textBox1.Text.Contains("."))
             {
-                textBox1.Text = textBox1.Text + ".";
+               if(textBox1.Text=="")
+                {
+                     textBox1.Text="0.";  
+
+                } 
+                else
+                {
+                    textBox1.Text = textBox1.Text + ".";
+                }
             }
-            else if(textBox1.Text=="")
-            {
-              textBox1.Text="0.";  
-
-            } 
-
         }
 
         private void Backspace(object sender, EventArgs e)
