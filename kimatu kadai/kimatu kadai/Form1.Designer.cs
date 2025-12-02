@@ -180,6 +180,8 @@
             this.textBox1.TabIndex = 13;
             this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             this.textBox1.ReadOnly=true;
+            this.textBox1.TabStop = false;
+
             // 
             // textBox2
             // 
@@ -190,6 +192,7 @@
             this.textBox2.TabIndex = 14;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.ReadOnly=true;
+            this.textBox2.TabStop = false;
             // 
             // button14
             // 
