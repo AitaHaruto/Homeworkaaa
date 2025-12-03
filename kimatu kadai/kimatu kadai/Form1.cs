@@ -146,7 +146,8 @@ namespace WindowsFormsApp1
             if (textBox1.Text == "4545" || textBox1.Text == "1919")
             {
                 MessageBox.Show("君、すべってるよ。");
-                textBox1.Text = "";
+                textBox2.Text = "滑ってるやつに";
+                textBox1.Text ="使われるのしんどいわ～";
                 Application.Exit();
             }
         }
