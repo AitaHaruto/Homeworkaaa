@@ -143,7 +143,7 @@ namespace WindowsFormsApp1
         }
         private void Subetteru()
         {
-            if (textBox1.Text == "4545" || textBox1.Text == "1919")
+            if (textBox1.Text == "4545" || textBox1.Text == "1919"|| textBox1.Text == "081"|| textBox1.Text == "072")
             {
                 MessageBox.Show("君、すべってるよ。");
                 textBox2.Text = "滑ってるやつに";
