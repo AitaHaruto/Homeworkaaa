@@ -98,6 +98,7 @@ namespace WindowsFormsApp1
                 enzanshi = btn.Text;
                 textBox2.Text = num1.ToString() + btn.Text;
                 textBox1.Text = "";
+                textBox1.Font = new Font(textBox1.Font.FontFamily, 40);
             }
         }
 
