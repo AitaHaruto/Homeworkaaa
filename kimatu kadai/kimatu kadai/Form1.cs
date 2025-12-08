@@ -24,8 +24,25 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+        private void AdjustFontSize(TextBox tb)
+        {
+            using (Graphics g = tb.CreateGraphics())
+            {
+                // 現在のフォントサイズから開始
+                float fontSize = tb.Font.Size;
+                SizeF textSize = g.MeasureString(tb.Text, tb.Font);
 
+                // テキストが幅を超えている間、フォントサイズを縮小
+                while (textSize.Width > tb.Width && fontSize > 8) // 最小サイズを 8pt に設定
+                {
+                    fontSize -= 0.5f;
+                    tb.Font = new Font(tb.Font.FontFamily, fontSize);
+                    textSize = g.MeasureString(tb.Text, tb.Font);
+                }
+            }
+        }
 
+     
         private void NumberButton_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -37,6 +54,10 @@ namespace WindowsFormsApp1
         {
             textBox1.Text = "";
             textBox2.Text = "";
+            textBox1.Font= new Font(textBox1.Font.FontFamily, 40);
+            textBox2.Font = new Font(textBox2.Font.FontFamily, 25);
+
+
         }
         private void Operator(object sender, EventArgs e)
         {
@@ -153,7 +174,7 @@ namespace WindowsFormsApp1
         }
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-
+            AdjustFontSize(textBox1);
             Subetteru();
 
         }
