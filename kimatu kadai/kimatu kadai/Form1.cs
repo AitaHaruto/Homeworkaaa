@@ -152,12 +152,22 @@ namespace WindowsFormsApp1
                 {
                     textBox1.Font = new Font(textBox1.Font.FontFamily, 40);
                 }
-                 else if (textBox1.Font.Size != 40)
+                else if (textBox1.Font.Size != 40)
                 {
                     float newSize = textBox1.Font.Size + 1.0f;
 
-                    textBox1.Font = new Font(textBox1.Font.FontFamily,newSize );
+                    textBox1.Font = new Font(textBox1.Font.FontFamily, newSize);
                 }
+
+            }
+            else if (textBox1.Text == string.Empty
+                  && textBox2.Text != string.Empty)
+            {
+                textBox1.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
+                textBox2.Text = "";
+
+
+
 
             }
 
