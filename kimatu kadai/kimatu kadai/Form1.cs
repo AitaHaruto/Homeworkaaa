@@ -46,7 +46,15 @@ namespace WindowsFormsApp1
         private void NumberButton_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+            if (textBox1.Text.Contains("E"))
+            {
+                textBox1.Text = "";
+                textBox2.Text = "";
+                num1 = 0;
+                num2 = 0;
+            }
             textBox1.Text += btn.Text;
+
         }
 
 
@@ -56,6 +64,8 @@ namespace WindowsFormsApp1
             textBox2.Text = "";
             textBox1.Font= new Font(textBox1.Font.FontFamily, 40);
             textBox2.Font = new Font(textBox2.Font.FontFamily, 25);
+            num1 = 0;
+            num2 = 0;
 
 
         }
@@ -91,8 +101,19 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    // 1回目の演算
-                    num1 = Convert.ToDouble(textBox1.Text);
+                    if (textBox1.Text.Contains("E"))
+                    {
+                        textBox1.Text = "";
+                        textBox2.Text = "";
+                        num1 = 0;
+                        num2 = 0;
+                    }
+                    else 
+                    {
+                        // 1回目の演算
+                        num1 = Convert.ToDouble(textBox1.Text);
+                    }
+                        
                 }
 
                 enzanshi = btn.Text;
@@ -182,6 +203,7 @@ namespace WindowsFormsApp1
                 textBox1.Text ="使われるのしんどいわ～";
                 MessageBox.Show("君、すべってるよ。");
                 Application.Exit();
+                
             }
         }
         private void TextBox1_TextChanged(object sender, EventArgs e)
